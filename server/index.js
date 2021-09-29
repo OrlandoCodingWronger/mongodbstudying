@@ -19,8 +19,10 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cookieParser());
 
-app.get('/', (req, res) => {
-  res.send('Hello World! ~ 안녕하세요 zzzkkk')
+app.get('/', (req, res) => res.send('Hello World! ~ 안녕하세요 zzzkkk'))
+
+app.get('/api/hello',(req, res)=>{
+  res.send("안녕하세요 ~ ")
 })
 
 app.post('/api/users/register',(req, res) => {
@@ -103,3 +105,4 @@ app.listen(port, () => {
 // 없으면 받고, 있으면 루트 폴더에서 터미널 접속되었는지 여부 확인 후, 
 // git init 실행
 // 깃의 상태를 확인하고 싶으면, git status
+
